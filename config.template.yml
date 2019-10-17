@@ -1,0 +1,36 @@
+oauthConfig:
+    - id: github
+      name: GitHub
+      clientId: ##CLIENT_ID_GITHUB##
+      clientSecret: ##CLIENT_SECRET_GITHUB##
+      type: github
+    - id: google
+      name: Google
+      clientId: ##CLIENT_ID_GOOGLE##
+      clientSecret: ##CLIENT_SECRET_GOOGLE##
+      type: google
+    - id: amazon
+      name: Amazon
+      clientId: ##CLIENT_ID_AMAZON##
+      clientSecret: ##CLIENT_SECRET_AMAZON##
+      type: amazon
+
+baseUrl: ##BASE_URL##
+
+logging:
+  level: INFO
+  loggers:
+    eu.doppel_helix.dev: DEBUG
+
+server:
+  gzip:
+    bufferSize: 8KiB
+    syncFlush: true
+  applicationConnectors:
+      - type: https
+        port: 9000
+        keyStorePath: ##PATH_TO_JKS_STORE##
+        keyStorePassword: ##PASSWORD##
+        validateCerts: false
+  adminConnectors: []
+
