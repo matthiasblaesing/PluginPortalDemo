@@ -33,6 +33,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 import org.glassfish.jersey.filter.LoggingFilter;
 import org.glassfish.jersey.logging.LoggingFeature;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Path("/oauth")
 @Produces(MediaType.APPLICATION_JSON)
@@ -99,7 +100,7 @@ public class AuthenticationResource {
 
     @Path("code")
     @GET
-    public Response codeResponse(@QueryParam("state") String state, @QueryParam("code") String code) {
+    public Response codeResponse(@QueryParam("state") @NotEmpty String state, @QueryParam("code") @NotEmpty String code) {
         LOG.log(Level.INFO, String.format("Received State: '%s', Code: '%s'", state, code));
 
         String configId = authCache.getIfPresent(state);
