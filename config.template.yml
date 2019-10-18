@@ -21,6 +21,10 @@ logging:
   level: INFO
   loggers:
     eu.doppel_helix.dev: DEBUG
+  appenders:
+    - type: file
+      archive: false
+      currentLogFilename: PluginPortalDemo.log
 
 server:
   gzip:
@@ -33,4 +37,8 @@ server:
         keyStorePassword: ##PASSWORD##
         validateCerts: false
   adminConnectors: []
-
+  requestLog:
+    appenders:
+      - type: file
+        currentLogFilename: PluginPortalDemo.access.log
+        archive: false

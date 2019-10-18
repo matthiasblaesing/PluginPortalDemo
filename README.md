@@ -48,3 +48,6 @@ Testing
    to this sample application. The application verifies the login and fetches
    your profile data from the authentication provider and presents you with a
    JSON document holding the extracted data.
+
+Logs will be written to `PluginPortalDemo.log`, access log will be written to
+`PluginPortalDemo.access.log`.
