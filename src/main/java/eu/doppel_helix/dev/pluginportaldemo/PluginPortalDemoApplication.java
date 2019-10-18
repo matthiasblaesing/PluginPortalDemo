@@ -19,7 +19,6 @@ public class PluginPortalDemoApplication extends Application<PluginPortalDemoCon
 
     @Override
     public void initialize(final Bootstrap<PluginPortalDemoConfiguration> bootstrap) {
-        // TODO: application initialization
     }
 
     @Override
